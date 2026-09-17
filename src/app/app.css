@@ -17,6 +17,11 @@ a {
     margin: 6px;
 }
 
+#header-top .input-group .input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 #header-top .input-group .form-control,
 #header-top .input-group .input-group-text {
   height: 100%;
@@ -24,4 +29,58 @@ a {
   padding-bottom: 0;
   background-color: #d9d9d9;
   border: none;
+
+}
+
+#header-top .input-group .form-control:focus,
+#header-top .input-group .input-group-text:focus {
+  box-shadow: none;
+  border-color: transparent;
+  outline: none;
+}
+
+#header-top .input-group .input-group-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-bottom nav a {
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 700;
+}
+
+#footer {
+    background-color: #171717;
+}
+
+#footer-messages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+}
+
+.icons-and-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #ececdc;
+}
+
+.messages span:first-child {
+    display: block;
+}
+
+#social-media-icons {
+    display: flex;
+    gap: 12px;
 }
