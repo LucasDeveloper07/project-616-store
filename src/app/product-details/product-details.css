@@ -1,0 +1,12 @@
+.first-image {
+    width: 200px;
+    background-color: #ececdc;
+    border-radius: 6px;
+    
+}
+
+.others-images {
+    width: 80px;
+    background-color: #ececdc;
+    border-radius: 6px;
+}
