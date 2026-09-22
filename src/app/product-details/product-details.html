@@ -1,11 +1,84 @@
-<div id="product-card">
-    <div id="images-product">
-        <img src="2.svg" alt="" class="first-image">
-        <img src="2.svg" alt="" class="others-images">
-        <img src="2.svg" alt="" class="others-images">
-        <img src="2.svg" alt="" class="others-images">
+<div id="detalhes-produto">
+    <div id="card-produto" class="d-flex gap-3">
+    
+        <!--Imagens do produto-->
+        <div id="outras-imagens-produto" class="d-flex flex-column gap-2">
+            <img src="2.svg" alt="" class="outras-imagens">
+            <img src="2.svg" alt="" class="outras-imagens">
+            <img src="2.svg" alt="" class="outras-imagens">
+        </div>
+
+        <div id="imagem-principal-produto">
+            <img src="2.svg" alt="" class="imagem-principal">
+        </div>
+
+        <!--Informações do produto-->
+        <div id="info-produto" class="flex-grow-1">
+            <h1 class="titulo-produto">Funko Pop! Homem de Ferro</h1>
+            <p class="subtitulo-produto">Marvel - Funko Pop</p>
+
+            <!--Avaliações-->
+            <div class="avaliacao-produto d-flex align-items-center gap-2">
+                <span class="estrelas">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+                <span class="contador-avaliacoes">(124 avaliações)</span>
+            </div>
+
+            <!--Preço do produto-->
+            <p class="preco-produto">R$ 139,90</p>
+            <p class="parcela-produto">ou até 3x de 46,63 sem juros</p>
+
+            <!--Seletor de quantidade do produto-->
+            <div class="seletor-quantidade d-flex align-items-center gap-3">
+                <button type="button" class="qtd-btn" id="qtd-min">-</button>
+                <span id="qtd-valor">1</span>
+                <button type="button" class="qtd-btn" id="qtd-max">+</button>
+            </div>
+
+            <!--Botão de adicionar ao carrinho-->
+            <button type="button" class="btn-add-carrinho w-100">
+                <i class="bi bi-cart"></i> ADICIONAR AO CARRINHO
+            </button>
+
+            <!--Botão de comprar agora-->
+            <button type="button" class="btn-comprar-agora w-100">
+                COMPRAR AGORA
+            </button>
+
+        </div>
     </div>
-    <div id="info-product">
+
+    <!--Produto original, embalagem segura e entrega rápida-->
+    <div id="selos-produto" class="d-flex gap-3">
+
+        <div class="selos-produto d-flex align-items-center gap-2">
+            <i class="bi bi-patch-check badge-icon"></i>
+            <div class="selo-texto">
+                <p class="selo-titulo">Produto Original</p>
+                <p class="selo-subtitulo">Licenciada Marvel</p>
+            </div>
+        </div>
+
+        <div class="selos-produto d-flex align-items-center gap-2">
+            <i class="bi bi-box-seam badge-icon"></i>
+            <div class="selo-texto">
+                <p class="selo-titulo">Embalagem Segura</p>
+                <p class="selo-subtitulo">Para não danificar</p>
+            </div>
+        </div>
+
+        <div class="selos-produto d-flex align-items-center gap-2">
+            <i class="bi bi-truck badge-icon"></i>
+            <div class="selo-texto">
+                <p class="selo-titulo">Entrega Rápida</p>
+                <p class="selo-subtitulo">Para todo o Brasil</p>
+            </div>
+        </div>
 
     </div>
 </div>
