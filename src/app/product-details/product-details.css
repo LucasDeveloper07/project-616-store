@@ -1,14 +1,15 @@
 #detalhes-produto {
     background-color: var(--corFundo);
+    padding-top: 90px;
+    padding-bottom: 20px;
 }
 
 /* Imagens do produto */
 
 #card-produto {
-    padding-left: 180px;
-    padding-right: 180px;
-    padding-top: 90px;
-    padding-bottom: 20px;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-bottom: 20px;
 }
 
 #outras-imagens-produto {
@@ -144,16 +145,16 @@
 /* Selos do produto */
 
 #selos-produto {
-    padding-left: 180px;
-    padding-right: 180px;
-    padding-bottom: 90px;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-bottom: 90px;
 }
 
 .selo-produto {
     background-color: #d7d7d1;
     border-radius: 10px;
-    flex: 1;
     padding: 16px;
+    width: 300px;
 }
 
 .badge-icon {
@@ -181,3 +182,23 @@
     margin: 0;
 }
 
+/* Descrição do produto */
+
+#descricao-produto {
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-bottom: 20px;
+    border: 2px solid #d7d7d1;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.descricao-titulo {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.descricao-texto {
+    font-family: "Istok Web", sans-serif;
+}
