@@ -1,0 +1,62 @@
+#esqueci-senha {
+    background-color: var(--corFundo);
+}
+
+.card-esqueci-senha {
+    width: 420px;
+    background-color: #d7d7d1;;
+    border-radius: 8px;
+    margin: 60px;
+    padding: 20px;
+}
+
+/* Titulo esqueci senha e texto */
+.texto-esqueci-senha {
+    margin-bottom: 30px;
+}
+
+.titulo-esqueci-senha {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    color: var(--preto);
+    text-align: center;
+}
+
+.paragrafo-esqueci-senha {
+    font-family: "Istok Web", sans-serif;
+    font-size: 15px;
+    color: var(--preto);
+    text-align: center;
+}
+
+/* Formulário esqueci senha */
+.esqueci-senha-form {
+    margin-bottom: 30px;
+}
+
+.label-email {
+    font-family: "Istok Web", sans-serif;
+    font-size: 15px;
+    color: var(--preto);
+    margin-bottom: 3px;
+}
+
+#email {
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 7px;
+    margin-bottom: 15px;
+}
+
+#btn-enviar {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--vermelho);
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+

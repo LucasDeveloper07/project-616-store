@@ -197,6 +197,7 @@
     font-family: "M PLUS 1p", sans-serif;
     font-weight: bold;
     font-size: 30px;
+    color: var(--preto);
 }
 
 .descricao-texto {
