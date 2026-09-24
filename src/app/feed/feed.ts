@@ -212,4 +212,9 @@ export class Feed {
       "keywords": "caderno, papelaria, acessorio, marvel, vingadores"
     }
   ];
+
+  verDetalhe(obj:Produto) {
+    localStorage.setItem("produto", JSON.stringify(obj));
+    location.href="./product-details";
+  }
 }

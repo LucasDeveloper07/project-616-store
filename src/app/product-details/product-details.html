@@ -3,19 +3,19 @@
     
         <!--Imagens do produto-->
         <div id="outras-imagens-produto" class="d-flex flex-column gap-2">
-            <img src="2.svg" alt="" class="outras-imagens">
-            <img src="2.svg" alt="" class="outras-imagens">
-            <img src="2.svg" alt="" class="outras-imagens">
+            <img src="{{obj.codigo}}.svg" alt="" class="outras-imagens">
+            <img src="{{obj.codigo}}.svg" alt="" class="outras-imagens">
+            <img src="{{obj.codigo}}.svg" alt="" class="outras-imagens">
         </div>
 
         <div id="imagem-principal-produto">
-            <img src="2.svg" alt="" class="imagem-principal">
+            <img src="{{obj.codigo}}.svg" alt="" class="imagem-principal">
         </div>
 
         <!--Informações do produto-->
         <div id="info-produto" class="flex-grow-1">
-            <h1 class="titulo-produto">Funko Pop! Homem de Ferro</h1>
-            <p class="subtitulo-produto">Marvel - Funko Pop</p>
+            <h1 class="titulo-produto">{{obj.nome}}</h1>
+            <p class="subtitulo-produto">Marvel</p>
 
             <!--Avaliações-->
             <div class="avaliacao-produto d-flex align-items-center gap-2">
@@ -30,8 +30,10 @@
             </div>
 
             <!--Preço do produto-->
-            <p class="preco-produto">R$ 139,90</p>
-            <p class="parcela-produto">ou até 3x de 46,63 sem juros</p>
+            <p class="preco-produto">R$ {{obj.valor | currency:'BRL'}}</p>
+            <p class="parcela-produto">
+                ou até 3x de {{ calcularParcela(obj.valor, 3) | currency:'BRL' }} sem juros
+            </p>
 
             <!--Seletor de quantidade do produto-->
             <div class="seletor-quantidade d-flex align-items-center gap-3">
@@ -85,11 +87,7 @@
     <div id="descricao-produto">
         <h1 class="descricao-titulo">Descrição</h1>
         <div class="descricao-texto">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Tempora iusto perspiciatis repellendus nobis, nesciunt delectus mollitia 
-                explicabo accusantium velit dolor est illum. Quia pariatur saepe, 
-                doloribus neque quaerat sapiente possimus.
-            </p>
+            <p>{{obj.descritivo}}</p>
         </div>
     </div>
 </div>
