@@ -3,6 +3,14 @@
     padding: 15px;
 }
 
+.titulo-feed {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--preto);
+    margin-bottom: 20px;
+}
+
 .produto-card {
     border-radius: 6px;
     display: flex;

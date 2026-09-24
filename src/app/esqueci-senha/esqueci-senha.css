@@ -3,11 +3,12 @@
 }
 
 .card-esqueci-senha {
-    width: 420px;
+    width: 500px;
     background-color: #d7d7d1;;
     border-radius: 8px;
     margin: 60px;
-    padding: 20px;
+    padding: 60px;
+    padding-bottom: 30px;
 }
 
 /* Titulo esqueci senha e texto */
@@ -47,7 +48,8 @@
     border-radius: 8px;
     border: none;
     padding: 7px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    outline: none;
 }
 
 #btn-enviar {
@@ -57,6 +59,15 @@
     font-family: "M PLUS 1p", sans-serif;
     font-weight: bold;
     font-size: 20px;
+    color: white;
     padding: 10px;
 }
 
+.link-login {
+    margin-top: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--preto);
+}

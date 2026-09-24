@@ -4,7 +4,6 @@ import { EsqueciSenha } from './esqueci-senha/esqueci-senha';
 import { Login } from './login/login';
 import { CriarConta } from './criar-conta/criar-conta';
 import { ProductDetails } from './product-details/product-details';
-import { Register } from './register/register';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
 
 export const routes: Routes = [
@@ -14,6 +13,5 @@ export const routes: Routes = [
     {path:"login", component: Login},
     {path:"criar-conta", component: CriarConta},
     {path:"product-details", component: ProductDetails},
-    {path:"register", component: Register},
     {path:"shopping-cart", component: ShoppingCart}
 ];

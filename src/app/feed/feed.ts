@@ -93,7 +93,7 @@ export class Feed {
     },
     {
       "codigo": 9,
-      "nome": "HQ Homem-Aranha: De Volta ao Lar",
+      "nome": "HQ Homem-Aranha",
       "descritivo": "História em quadrinhos apresentando uma aventura do Homem-Aranha.",
       "valor": 49.90,
       "valorPromo": 39.90,
@@ -143,7 +143,7 @@ export class Feed {
     },
     {
       "codigo": 14,
-      "nome": "Chaveiro Escudo do Capitão América",
+      "nome": "Chaveiro do Capitão América",
       "descritivo": "Chaveiro inspirado no icônico escudo do Capitão América.",
       "valor": 29.90,
       "valorPromo": 24.90,
