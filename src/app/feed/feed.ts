@@ -16,7 +16,7 @@ export class Feed {
       "nome": "Funko Pop! Homem-Aranha",
       "descritivo": "Funko Pop do Homem-Aranha inspirado no universo Marvel.",
       "valor": 129.90,
-      "valorPromo": 109.90,
+      "valorPromo": 0,
       "quantidade": 15,
       "destaque": 1,
       "keywords": "funko, pop, homem-aranha, spider-man, marvel"
@@ -26,7 +26,7 @@ export class Feed {
       "nome": "Funko Pop! Homem de Ferro",
       "descritivo": "Funko Pop do Homem de Ferro com design inspirado nos filmes da Marvel.",
       "valor": 139.90,
-      "valorPromo": 119.90,
+      "valorPromo": 0,
       "quantidade": 12,
       "destaque": 1,
       "keywords": "funko, pop, homem de ferro, iron man, marvel"
@@ -46,7 +46,7 @@ export class Feed {
       "nome": "Funko Pop! Groot",
       "descritivo": "Funko Pop do Groot, personagem dos Guardiões da Galáxia.",
       "valor": 119.90,
-      "valorPromo": 99.90,
+      "valorPromo": 0,
       "quantidade": 20,
       "destaque": 0,
       "keywords": "funko, pop, groot, guardioes da galaxia, marvel"
@@ -86,7 +86,7 @@ export class Feed {
       "nome": "Action Figure Wolverine",
       "descritivo": "Action figure articulado do Wolverine com suas tradicionais garras.",
       "valor": 289.90,
-      "valorPromo": 249.90,
+      "valorPromo": 0,
       "quantidade": 6,
       "destaque": 1,
       "keywords": "action figure, wolverine, x-men, marvel"
@@ -96,7 +96,7 @@ export class Feed {
       "nome": "HQ Homem-Aranha",
       "descritivo": "História em quadrinhos apresentando uma aventura do Homem-Aranha.",
       "valor": 49.90,
-      "valorPromo": 39.90,
+      "valorPromo": 0,
       "quantidade": 25,
       "destaque": 0,
       "keywords": "hq, homem-aranha, spider-man, quadrinhos, marvel"
@@ -106,7 +106,7 @@ export class Feed {
       "nome": "HQ Vingadores",
       "descritivo": "História em quadrinhos com uma aventura dos principais heróis dos Vingadores.",
       "valor": 54.90,
-      "valorPromo": 44.90,
+      "valorPromo": 0,
       "quantidade": 18,
       "destaque": 1,
       "keywords": "hq, vingadores, avengers, quadrinhos, marvel"
@@ -116,7 +116,7 @@ export class Feed {
       "nome": "HQ X-Men",
       "descritivo": "História em quadrinhos apresentando uma aventura dos mutantes da equipe X-Men.",
       "valor": 59.90,
-      "valorPromo": 49.90,
+      "valorPromo": 0,
       "quantidade": 14,
       "destaque": 0,
       "keywords": "hq, x-men, wolverine, mutantes, quadrinhos, marvel"
@@ -126,7 +126,7 @@ export class Feed {
       "nome": "HQ Guerra Civil",
       "descritivo": "Edição em quadrinhos baseada no clássico conflito entre os heróis da Marvel.",
       "valor": 89.90,
-      "valorPromo": 74.90,
+      "valorPromo": 0,
       "quantidade": 9,
       "destaque": 1,
       "keywords": "hq, guerra civil, civil war, capitao america, homem de ferro, marvel"
@@ -146,7 +146,7 @@ export class Feed {
       "nome": "Chaveiro do Capitão América",
       "descritivo": "Chaveiro inspirado no icônico escudo do Capitão América.",
       "valor": 29.90,
-      "valorPromo": 24.90,
+      "valorPromo": 0,
       "quantidade": 40,
       "destaque": 0,
       "keywords": "chaveiro, acessorio, capitao america, escudo, marvel"
@@ -176,7 +176,7 @@ export class Feed {
       "nome": "Funko Pop! Loki",
       "descritivo": "Funko Pop do Loki, um dos personagens mais conhecidos do universo Marvel.",
       "valor": 139.90,
-      "valorPromo": 119.90,
+      "valorPromo": 0,
       "quantidade": 13,
       "destaque": 1,
       "keywords": "funko, pop, loki, marvel"
@@ -186,7 +186,7 @@ export class Feed {
       "nome": "Funko Pop! Venom",
       "descritivo": "Funko Pop do Venom com seu visual característico.",
       "valor": 149.90,
-      "valorPromo": 129.90,
+      "valorPromo": 0,
       "quantidade": 9,
       "destaque": 1,
       "keywords": "funko, pop, venom, homem-aranha, marvel"
@@ -216,5 +216,10 @@ export class Feed {
   verDetalhe(obj:Produto) {
     localStorage.setItem("produto", JSON.stringify(obj));
     location.href="./product-details";
+  }
+
+  calcularDesconto(valor:number, valorPromo:number): number {
+    const desconto = ((valor - valorPromo) / valor) * 100;
+    return Math.round(desconto);
   }
 }

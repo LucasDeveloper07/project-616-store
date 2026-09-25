@@ -11,6 +11,10 @@
                 <div class="col-6 col-md-4 col-lg-3" *ngFor="let obj of lista">
                     <div class="card produto-card h-100">
 
+                        <span class="icone-desconto" *ngIf="obj.valorPromo > 0">
+                                {{calcularDesconto(obj.valor, obj.valorPromo)}}% OFF
+                        </span>
+
                         <img src="{{obj.codigo}}.svg" alt="{{obj.nome}}" class="card-img-top">
 
                         <div class="card-body">
@@ -18,7 +22,9 @@
                             <!--Nome e preço do produto-->
                             <h5 class="card-title">{{obj.nome}}</h5>
 
-                            <p class="preco">{{obj.valor | currency:'BRL'}}</p>
+                            
+                            <p class="preco" *ngIf="obj.valorPromo > 0">{{obj.valorPromo | currency:'BRL'}}</p>
+                            <p class="preco" *ngIf="obj.valorPromo == 0">{{obj.valor | currency:'BRL'}}</p>
 
                             <!--Botão de adicionar ao carrinho e ver detalhes-->
                             <button class="btn btn-ver-detalhes" (click)="verDetalhe(obj);" onclick="location.href='./product-details'">

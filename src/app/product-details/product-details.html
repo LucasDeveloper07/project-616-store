@@ -29,10 +29,26 @@
                 <span class="contador-avaliacoes">(124 avaliações)</span>
             </div>
 
-            <!--Preço do produto-->
-            <p class="preco-produto">R$ {{obj.valor | currency:'BRL'}}</p>
-            <p class="parcela-produto">
+            <!--Preço do produto com desconto-->
+            <div class="div-preco-sem-desconto" *ngIf="obj.valorPromo > 0">
+                <span class="texto-span-de">De: </span>
+                <p class="preco-produto-sem-desconto">{{obj.valor | currency:'BRL'}}</p>
+            </div>
+
+            <div class="div-preco-com-desconto" *ngIf="obj.valorPromo > 0">
+                <span class="texto-span-por">Por: </span>
+                <p class="preco-produto">{{obj.valorPromo | currency:'BRL'}}</p>
+            </div>
+
+            <!--Preço do produto sem desconto-->
+            <p class="preco-produto" *ngIf="obj.valorPromo == 0">{{obj.valor | currency:'BRL'}}</p>
+
+            <p class="parcela-produto" *ngIf="obj.valorPromo == 0">
                 ou até 3x de {{ calcularParcela(obj.valor, 3) | currency:'BRL' }} sem juros
+            </p>
+
+            <p class="parcela-produto" *ngIf="obj.valorPromo > 0">
+                ou até 3x de {{ calcularParcela(obj.valorPromo, 3) | currency:'BRL' }} sem juros
             </p>
 
             <!--Seletor de quantidade do produto-->
