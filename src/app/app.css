@@ -1,62 +1,61 @@
+/* Header superior */
+
 #header-top {
     background-color: #171717;
     padding: 20px;
 }
 
-#header-bottom {
-    background-color: #c42021;
-    padding: 5px;
-    justify-content: space-between;
 
-}
-
-a {
-    color: #ececdc;
-    text-decoration: none;
-}
-
-#header-top .input-group {
+.input-group {
     max-width: 900px;
     height: 30px;
     margin: 6px;
 }
 
-#header-top .input-group .input-group-text {
+.input-group-text {
+    color: var(--preto);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    background-color: #d9d9d9;
+    border: none;
 }
 
-
-#header-top .input-group .form-control,
-#header-top .input-group .input-group-text {
-  background-color: #d9d9d9;
-  border: none;
+.links-header-top {
+    text-decoration: none;
 }
 
-#header-top .input-group .form-control:focus,
-#header-top .input-group .input-group-text:focus {
-  box-shadow: none;
-  border-color: transparent;
-  outline: none;
+.form-control {
+    background-color: #d9d9d9;
+    border: none;
+    box-shadow: none;
 }
 
-#header-top .input-group .input-group-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.icones-header {
+    font-size: 30px;
 }
 
-#header-bottom nav a {
-  font-family: "M PLUS 1p", sans-serif;
-  font-weight: bold;
-  padding: 5px;
-  font-size: 18px;
+/* Header inferior */
+
+#header-bottom {
+    background-color: #c42021;
+    padding: 5px;
 }
 
-#header-bottom nav a:hover{
-    background-color: rgb(136, 9, 9);
+.links-navbar {
+    text-decoration: none;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+}
+
+.links-navbar:hover {
+    background-color: var(--vermelhoHover);
     border-radius: 10px;
 }
+
+/* Botões */
 
 .btn-login {
     background-color: var(--vermelho);
@@ -66,6 +65,7 @@ a {
     font-weight: bold;
     color: white;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .btn-login:hover {
@@ -79,24 +79,20 @@ a {
     font-family: "M PLUS 1p", sans-serif;
     font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 
 .btn-criar-conta:hover {
     background-color: var(--vermelhoHover);
 }
 
-main{
-    background-color: #ececdc;
-}
+/* Rodapé */
 
 #footer {
     background-color: #171717;
 }
 
-#footer-messages {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.footer-messages {
     padding: 16px 24px;
 }
 
@@ -107,19 +103,22 @@ main{
 }
 
 .messages {
-    display: flex;
-    flex-direction: column;
     font-family: "Istok Web", sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
     color: #ececdc;
 }
 
-.messages span:first-child {
+.span-first {
     display: block;
 }
 
 #social-media-icons {
     display: flex;
     gap: 12px;
+}
+
+i {
+    color: white;
+    font-size: 26px;
 }
