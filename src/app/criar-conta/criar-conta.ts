@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [],
   selector: 'app-criar-conta',
-  styleUrl: './criar-conta.css',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './criar-conta.html',
+  styleUrl: './criar-conta.css'
 })
-export class CriarConta {}
+export class CriarConta { }

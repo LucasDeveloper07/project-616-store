@@ -54,17 +54,17 @@
 
 #btn-enviar {
     border: none;
-    border-radius: 10px;
-    background-color: var(--vermelho);
+    border-radius: 25px;
+    background-color: var(--amarelo);
     font-family: "M PLUS 1p", sans-serif;
     font-weight: bold;
     font-size: 20px;
-    color: white;
+    color: var(--preto);
     padding: 10px;
 }
 
 #btn-enviar:hover {
-    background-color: var(--vermelhoHover);
+    background-color: var(--amareloHover);
 }
 
 .link-login {

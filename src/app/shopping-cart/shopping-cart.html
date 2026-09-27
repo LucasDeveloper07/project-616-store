@@ -1,1 +1,74 @@
-<p>shopping-cart works!</p>
+<div class="cart-container d-flex justify-content-center">
+  <div class="cart-wrapper">
+    <div class="cart-header d-flex justify-content-between align-items-start">
+      <div>
+        <h2 class="title-header">Meu carrinho</h2>
+        <p class="subtitle">Confira seus itens e finalize sua compra.</p>
+      </div>
+
+      <a href="feed" class="back-link">
+        <i class="bi bi-arrow-left"></i> Continuar comprando
+      </a>
+    </div>
+
+    <!-- Box de carrinho com itens -->
+    <div class="cart-list d-flex flex-column gap-3" *ngIf="lista.length > 0">
+        <div class="cart-item d-flex align-items-center gap-3" *ngFor="let obj of lista">
+            <img src="{{obj.produto.codigo}}.svg" class="item-img">
+
+            <div class="item-info d-flex flex-column flex-grow-1">
+                <b class="title-product">{{obj.produto.nome}}</b>
+                <span class="item-sub">Marvel</span>
+                <span class="item-preco">{{obj.valorTotal | currency: 'BRL'}}</span>
+            </div>
+
+            <div class="item-qtd d-flex align-items-center justify-content-center gap-2">
+                <button class="btn-qtd d-flex align-items-center justify-content-center">-</button>
+                <span class="qtd-valor d-flex align-items-center justify-content-center">{{obj.qtd}}</span>
+                <button class="btn-qtd d-flex align-items-center justify-content-center">+</button>
+            </div>
+
+            <button class="btn-remove" title="Remover item">
+                <i class="bi bi-trash"></i>
+            </button>
+        </div>
+
+        <!-- Cupom e resumo do carrinho -->
+        <div class="row cart-bottom">
+          <div class="col-7">
+            <div class="cupom-box d-flex align-items-center gap-2">
+              <i class="tag-cupom bi bi-tag"></i>
+              <input class="form-cupom flex-grow-1" type="text" placeholder="Cupom de desconto">
+              <button class="btn-aplicar">Aplicar</button>
+            </div>
+          </div>
+
+          <div class="col-5">
+            <div class="resumo-box">
+              <div class="resumo-linha d-flex justify-content-between">
+                <span>Subtotal ({{lista.length}} itens)</span>
+                <span>{{calcularTotal() | currency: 'BRL'}}</span>
+              </div>
+  
+              <div class="resumo-total d-flex justify-content-between">
+                <span>Total</span>
+                <span class="total-preco">{{calcularTotal() | currency: 'BRL'}}</span>
+              </div>
+  
+              <button class="btn-finalizar">
+                <i class="bi bi-lock-fill"></i> Finalizar compra
+              </button>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <!-- Box de Carrinho Vazio -->
+    <div class="empty-cart-box" *ngIf="lista.length == 0">
+      <i class="bi bi-cart3 cart-icon"></i>
+      <p class="text-cart-empty">Seu carrinho está vazio.</p>
+      <a href="feed" class="btn-ver-produtos">Ver produtos</a>
+    </div>
+  </div>
+</div>
