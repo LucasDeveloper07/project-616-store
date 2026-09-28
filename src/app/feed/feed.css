@@ -5,6 +5,60 @@
     padding: 15px;
 }
 
+/* Banner */
+
+#banner {
+    position: relative;
+}
+
+.conteudo-banner {
+    background: 
+        linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.55) 40%, transparent 75%),
+        url('/banner-marvel.webp') center / cover no-repeat;
+    border-radius: 10px;
+    padding: 30px 40px;
+    min-height: 275px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-titulo {
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.banner-subtitulo {
+    font-family: "Istok Web", sans-serif;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-ver-todos {
+    background-color: var(--amarelo);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-ver-todos:hover {
+    background-color: var(--amareloHover);
+}
+
+.banner-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    max-height: 260px;
+}
+
 .titulo-feed {
     font-family: "M PLUS 1p", sans-serif;
     font-weight: bold;

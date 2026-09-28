@@ -223,3 +223,82 @@
 .descricao-texto {
     font-family: "Istok Web", sans-serif;
 }
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+    #detalhes-produto {
+        padding-top: 40px;
+    }
+
+    /* Imagens do produto */
+
+    #card-produto {
+        margin-left: 10px;
+        margin-right: 10px;
+        flex-direction: column;
+    }
+
+    #imagem-principal-produto {
+        width: 100%;
+    }
+
+    #outras-imagens-produto {
+        order: 2;
+        width: 100%;
+        flex-direction: row !important;
+        justify-content: center;
+    }
+
+    /* Informações do produto */
+
+    #info-produto {
+        order: 3;
+    }
+
+    .titulo-produto {
+        font-size: 18px;
+    }
+
+    .subtitulo-produto {
+        font-size: 14px;
+    }
+
+    .estrelas {
+        font-size: 14px;
+    }
+
+    .contador-avaliacoes {
+        font-size: 13px;
+    }
+
+    .preco-produto {
+        font-size: 26px;
+    }
+
+    .parcela-produto {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .seletor-quantidade {
+        margin-bottom: 20px;
+    }
+
+    /* Selos do produto */
+
+    #selos-produto {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 40px;
+        flex-direction: column;
+    }
+
+    /* Descrição do produto */
+
+    #descricao-produto {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 16px;
+    }
+}

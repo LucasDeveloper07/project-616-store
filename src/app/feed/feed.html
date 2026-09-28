@@ -1,6 +1,20 @@
 <div id="feed">
     <div class="container">
 
+        <!--Banner-->
+        <div class="banner mb-4">
+            <div class="conteudo-banner d-flex align-items-center justify-content-between">
+                <div class="banner-texto">
+                    <h1 class="banner-titulo">Lançamentos</h1>
+                    <p class="banner-subtitulo">
+                        Os melhores produtos do MCU
+                        em um só lugar.
+                    </p>
+                    <button class="btn-ver-todos">Ver todos</button>
+                </div>
+            </div>
+        </div>
+
         <!--Destaques-->
         <div id="destaques">
             <h2 class="titulo-feed">Destaques</h2>
@@ -12,7 +26,7 @@
                     <div class="card produto-card h-100">
 
                         <span class="icone-desconto" *ngIf="obj.valorPromo > 0">
-                                {{calcularDesconto(obj.valor, obj.valorPromo)}}% OFF
+                            {{calcularDesconto(obj.valor, obj.valorPromo)}}% OFF
                         </span>
 
                         <img src="{{obj.codigo}}.svg" alt="{{obj.nome}}" class="card-img-top">
