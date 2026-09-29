@@ -165,3 +165,24 @@
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+
+  .auth-banner-side {
+    display: none;
+  }
+
+  .form-wrapper h2 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .btn-submit {
+    font-size: 18px;
+  }
+}

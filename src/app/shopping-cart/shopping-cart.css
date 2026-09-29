@@ -214,3 +214,72 @@
 .btn-ver-produtos:hover {
   background-color: var(--vermelhoHover);
 }
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 15px;
+  }
+
+  .cart-header {
+    flex-direction: column;
+  }
+
+  .title-header {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  /* Itens do carrinho */
+
+  .cart-item {
+    padding: 12px;
+  }
+
+  .item-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .item-info {
+    flex-basis: 0;
+    min-width: 0;
+  }
+
+  .title-product {
+    font-size: 14px;
+  }
+
+  .item-preco {
+    font-size: 15px;
+  }
+
+  .item-qtd {
+    padding: 3px 8px;
+  }
+
+ .btn-remove {
+    margin-left: 0;
+  } 
+
+  /* Cupom e resumo do carrinho */
+
+  .cart-bottom .col-7 {
+    width: 100%;
+  }
+
+  .cart-bottom .col-5 {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  /* Carrinho vazio */
+
+  .empty-cart-box {
+    padding: 40px 20px;
+  }
+}
