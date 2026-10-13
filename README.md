@@ -155,8 +155,8 @@ A loja possui 20 produtos Marvel distribuídos nas categorias do menu:
 Projeto desenvolvido por estudantes do curso de Análise e Desenvolvimento de Sistemas.
 
 - **Nome dos(a) integrante** — [Lucas Felipe](https://github.com/LucasDeveloper07) e [Luis Martins](https://github.com/cyberllm-sys)
-- **Instituição:** _(FATEC Ipiranga)_
-- **Disciplina / Professor(a):** _(Desenvolvimento Web - Norton Glasser)_
+- **Instituição:** _FATEC Ipiranga_
+- **Disciplina / Professor(a):** _Desenvolvimento Web - Norton Glasser_
 
 ---
 
