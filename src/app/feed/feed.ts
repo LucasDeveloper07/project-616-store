@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Produto } from '../model/produto';
 import { CommonModule } from '@angular/common';
+import { ProdutoService } from '../service/produto-service';
+import { ChangeDetectorRef } from '@angular/core';
+import { Carrinho } from '../model/carrinho';
 
 @Component({
   imports: [CommonModule],
@@ -8,8 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './feed.css',
   templateUrl: './feed.html',
 })
-
 export class Feed {
+  /*
   lista: Produto [] = [
     {
       "codigo": 1,
@@ -212,13 +215,60 @@ export class Feed {
       "keywords": "caderno, papelaria, acessorio, marvel, vingadores"
     }
   ];
+  */
 
-  verDetalhe(obj:Produto) {
+  lista: Produto[] = [];
+  mensagem: string = "";
+  tipoMensagem: string = "sucesso"; // Variável para verificação do tipo da mensagem ao ser exibida no HTML
+  timer: any;
+
+  constructor(private service: ProdutoService, private cd: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.load();
+  }
+
+  load() {
+    this.service.loadFeed().subscribe({
+      next: (produtos) => {
+        this.lista = produtos;
+        this.cd.detectChanges();
+      },
+      error: (err) => {
+        this.mensagem = "Ocorreu um erro, tente novamente mais tarde!";
+        this.tipoMensagem = "erro"
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  verDetalhe(obj: Produto) {
     localStorage.setItem("produto", JSON.stringify(obj));
     location.href="./product-details";
   }
 
-  calcularDesconto(valor:number, valorPromo:number): number {
+  adicionarCarrinho(obj: Produto) {
+    let json = localStorage.getItem("carrinho");
+    let carrinho = new Carrinho(json);
+
+    carrinho.addItem(obj);
+
+    carrinho.calcTotal();
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+    this.mensagem = "Produto adicionado ao carrinho!";
+    this.tipoMensagem = "sucesso";
+    this.cd.detectChanges();
+
+    clearTimeout(this.timer);
+    this.timer = setTimeout( () => {
+      this.mensagem = "";
+      this.cd.detectChanges();
+    }, 3000);
+  }
+
+  calcularDesconto(valor: number, valorPromo: number): number {
     const desconto = ((valor - valorPromo) / valor) * 100;
     return Math.round(desconto);
   }

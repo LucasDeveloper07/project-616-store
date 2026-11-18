@@ -1,118 +1,119 @@
-<header>
-  <div id="header">
+<div class="d-flex flex-column min-vh-100">
 
-    <!--Header superior-->
-    <div id="header-top" class="d-flex justify-content-around">
+  <header>
+    <div id="header">
 
-      <!-- Logotipo -->
-      <a href="feed">
-        <img src="logotipo-616.svg" alt="logotipo-616" width="80">
-      </a>
+      <!--Header superior-->
+      <div id="header-top" class="d-flex justify-content-around">
 
-      <!--Barra de busca-->
-      <div class="input-group">
-        <a href="" class="links-header-top">
-          <i class="input-group-text bi bi-search"></i>
+        <!-- Logotipo -->
+        <a href="feed">
+          <img src="logotipo-616.svg" alt="logotipo-616" width="80">
         </a>
 
-        <input type="text" class="form-control">
-      </div>
+        <!--Barra de busca-->
+        <div class="input-group">
+          <a href="" class="links-header-top">
+            <i class="input-group-text bi bi-search"></i>
+          </a>
 
-      <div class="d-flex gap-4 d-flex align-items-center">
-        
-        <!--Icone carrinho-->
-        <a href="shopping-cart">
-          <i class="icones-header bi bi-cart"></i>
-        </a>
-
-        <!--Botão de Login e criar conta-->
-        <div class="btn-header">
-          <a href="login" class="btn-login">LOGIN</a>
-          <a href="criar-conta" class="btn-criar-conta">CRIAR CONTA</a>
+          <input type="text" class="form-control">
         </div>
 
-        <!--Icone de usuário-->
-        <a href="login">
-          <i class="icones-header bi bi-person"></i>
-        </a>
+        <div class="d-flex gap-4 d-flex align-items-center">
+          
+          <!--Icone carrinho-->
+          <a href="shopping-cart">
+            <i class="icones-header bi bi-cart"></i>
+          </a>
+
+          <!--Botão de Login e criar conta-->
+          <div class="btn-header">
+            <a href="login" class="btn-login">LOGIN</a>
+            <a href="criar-conta" class="btn-criar-conta">CRIAR CONTA</a>
+          </div>
+
+          <!--Icone de usuário-->
+          <a href="login">
+            <i class="icones-header bi bi-person"></i>
+          </a>
+        </div>
       </div>
+
+      <!--Header inferior-->
+      <div id="header-bottom">
+        <nav>
+          <ul class="lista-navbar d-flex list-unstyled gap-4 justify-content-center mb-0">
+            <li><a href="feed" class="links-navbar">Action Figure</a></li>
+            <li><a href="feed" class="links-navbar">Funko Pop</a></li>
+            <li><a href="feed" class="links-navbar">HQ's</a></li>
+            <li><a href="feed" class="links-navbar">Roupas</a></li>
+            <li><a href="feed" class="links-navbar">Canecas</a></li>
+            <li><a href="feed" class="links-navbar">Acessórios</a></li>
+          </ul>
+        </nav>
+      </div>
+
     </div>
+  </header>
 
-    <!--Header inferior-->
-    <div id="header-bottom">
-      <nav>
-        <ul class="lista-navbar d-flex list-unstyled gap-4 justify-content-center mb-0">
-          <li><a href="feed" class="links-navbar">Action Figure</a></li>
-          <li><a href="feed" class="links-navbar">Funko Pop</a></li>
-          <li><a href="feed" class="links-navbar">HQ's</a></li>
-          <li><a href="feed" class="links-navbar">Roupas</a></li>
-          <li><a href="feed" class="links-navbar">Canecas</a></li>
-          <li><a href="feed" class="links-navbar">Acessórios</a></li>
-        </ul>
-      </nav>
-    </div>
-
-  </div>
-</header>
-
-<router-outlet>
-  <main>
-
+  <main class="flex-grow-1 d-flex flex-column">
+    <router-outlet></router-outlet>
   </main>
-</router-outlet>
 
-<!--Rodapé-->
-<footer>
-  <div id="footer">
-    <div class="footer-messages d-flex align-items-center justify-content-between">
-      <img src="logotipo-616.svg" alt="logotipo-616">
+  <!--Rodapé-->
+  <footer>
+    <div id="footer">
+      <div class="footer-messages d-flex align-items-center justify-content-between">
+        <img src="logotipo-616.svg" alt="logotipo-616">
 
-      <!--Compra segura-->
-      <div id="compra-segura" class="icons-and-message">
-        <i class="bi bi-shield-check"></i>
-        
-        <div id="compra-segura-message" class="messages">
-          <span class="span-first">Compra segura</span>
-          <span>Seus dados protegidos</span>
+        <!--Compra segura-->
+        <div id="compra-segura" class="icons-and-message">
+          <i class="bi bi-shield-check"></i>
+          
+          <div id="compra-segura-message" class="messages">
+            <span class="span-first">Compra segura</span>
+            <span>Seus dados protegidos</span>
+          </div>
         </div>
-      </div>
 
-      <!--Envio rápido-->
-      <div id="envio-rapido" class="icons-and-message">
-        <i class="bi bi-truck"></i>
+        <!--Envio rápido-->
+        <div id="envio-rapido" class="icons-and-message">
+          <i class="bi bi-truck"></i>
 
-        <div id="envio-rapido-message" class="messages">
-          <span class="span-first">Envio rápido</span>
-          <span>Para todo o Brasil</span>
+          <div id="envio-rapido-message" class="messages">
+            <span class="span-first">Envio rápido</span>
+            <span>Para todo o Brasil</span>
+          </div>
         </div>
-      </div>
 
-      <!--Atendimento rápido-->
-      <div id="atendimento-rapido" class="icons-and-message">
-        <i class="bi bi-telephone"></i>
+        <!--Atendimento rápido-->
+        <div id="atendimento-rapido" class="icons-and-message">
+          <i class="bi bi-telephone"></i>
 
-        <div id="atendimento-rapido-message" class="messages">
-          <span class="span-first">Atendimento rápido</span>
-          <span>Fale conosco</span>
+          <div id="atendimento-rapido-message" class="messages">
+            <span class="span-first">Atendimento rápido</span>
+            <span>Fale conosco</span>
+          </div>
         </div>
-      </div>
 
-      <!--Icones redes sociais-->
-      <div id="social-media-icons">
-        <a href="https://www.instagram.com/accounts/login/" target="_blank">
-          <i class="bi bi-instagram"></i>
-        </a>
+        <!--Icones redes sociais-->
+        <div id="social-media-icons">
+          <a href="https://www.instagram.com/accounts/login/" target="_blank">
+            <i class="bi bi-instagram"></i>
+          </a>
 
-        <a href="https://www.youtube.com/" target="_blank">
-          <i class="bi bi-youtube"></i>
-        </a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <i class="bi bi-youtube"></i>
+          </a>
 
-        <a href="https://www.tiktok.com/login" target="_blank">
-          <i class="bi bi-tiktok"></i>
-        </a>
+          <a href="https://www.tiktok.com/login" target="_blank">
+            <i class="bi bi-tiktok"></i>
+          </a>
 
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
+</div>

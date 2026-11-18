@@ -153,3 +153,39 @@ a {
     text-decoration: none;
     color: var(--preto);
 }
+
+/* Mensagem de aviso (toast) */
+
+.toast-carrinho {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #198754;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    animation: entrar 0.3s ease;
+}
+
+.toast-carrinho.erro {
+    background-color: #dc3545;
+}
+
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

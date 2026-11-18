@@ -12,8 +12,8 @@
     </div>
 
     <!-- Box de carrinho com itens -->
-    <div class="cart-list d-flex flex-column gap-3" *ngIf="lista.length > 0">
-        <div class="cart-item d-flex align-items-center gap-3" *ngFor="let obj of lista">
+    <div class="cart-list d-flex flex-column gap-3" *ngIf="carrinho.itens.length > 0">
+        <div class="cart-item d-flex align-items-center gap-3" *ngFor="let obj of carrinho.itens">
             <img src="{{obj.produto.codigo}}.svg" class="item-img">
 
             <div class="item-info d-flex flex-column flex-grow-1">
@@ -23,12 +23,12 @@
             </div>
 
             <div class="item-qtd d-flex align-items-center justify-content-center gap-2">
-                <button class="btn-qtd d-flex align-items-center justify-content-center">-</button>
+                <button class="btn-qtd d-flex align-items-center justify-content-center" (click)="diminuir(obj)">-</button>
                 <span class="qtd-valor d-flex align-items-center justify-content-center">{{obj.qtd}}</span>
-                <button class="btn-qtd d-flex align-items-center justify-content-center">+</button>
+                <button class="btn-qtd d-flex align-items-center justify-content-center" (click)="adicionar(obj)">+</button>
             </div>
 
-            <button class="btn-remove" title="Remover item">
+            <button class="btn-remove" title="Remover item" (click)="remover(obj)">
                 <i class="bi bi-trash"></i>
             </button>
         </div>
@@ -46,13 +46,13 @@
           <div class="col-5">
             <div class="resumo-box">
               <div class="resumo-linha d-flex justify-content-between">
-                <span>Subtotal ({{lista.length}} itens)</span>
-                <span>{{calcularTotal() | currency: 'BRL'}}</span>
+                <span>Subtotal ({{carrinho.totalUnid()}} itens)</span>
+                <span>{{carrinho.calcTotal() | currency: 'BRL'}}</span>
               </div>
   
               <div class="resumo-total d-flex justify-content-between">
                 <span>Total</span>
-                <span class="total-preco">{{calcularTotal() | currency: 'BRL'}}</span>
+                <span class="total-preco">{{carrinho.calcTotal() | currency: 'BRL'}}</span>
               </div>
   
               <button class="btn-finalizar">
@@ -65,7 +65,7 @@
     </div>
 
     <!-- Box de Carrinho Vazio -->
-    <div class="empty-cart-box" *ngIf="lista.length == 0">
+    <div class="empty-cart-box" *ngIf="carrinho.itens.length == 0">
       <i class="bi bi-cart3 cart-icon"></i>
       <p class="text-cart-empty">Seu carrinho está vazio.</p>
       <a href="feed" class="btn-ver-produtos">Ver produtos</a>

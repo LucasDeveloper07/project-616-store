@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemCarrinho } from '../model/item-carrinho';
+import { Carrinho } from '../model/carrinho';
 
 @Component({
   imports: [CommonModule],
@@ -9,9 +10,9 @@ import { ItemCarrinho } from '../model/item-carrinho';
   templateUrl: './shopping-cart.html'
 })
 export class ShoppingCart {
+  /*
   mensagem: string = "";
   valorCarrinho: number = 0;
-
   lista: ItemCarrinho[] = [
     {
       "produto": {
@@ -93,5 +94,43 @@ export class ShoppingCart {
     }
 
     return num;
+  }
+  */
+
+  mensagem: string = "";
+  carrinho: Carrinho = new Carrinho(null);
+
+  ngOnInit() {
+    let json = localStorage.getItem("carrinho");
+
+    if (json != null) {
+      this.carrinho = new Carrinho(json);
+    } else {
+      this.mensagem = "Seu carrinho está vazio!";
+    }
+  }
+
+  adicionar(item: ItemCarrinho) {
+    item.qtd++;
+    item.valorTotal = this.carrinho.calcItem(item);
+    this.save();
+  }
+
+  diminuir(item: ItemCarrinho) {
+    if (item.qtd > 1) {
+      item.qtd--;
+      item.valorTotal = this.carrinho.calcItem(item);
+      this.save();
+    }
+  }
+
+  remover(item: ItemCarrinho) {
+    this.carrinho.itens = this.carrinho.itens.filter(i => i !== item);
+    this.save();
+  }
+
+  save() {
+    this.carrinho.calcTotal();
+    localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
   }
 }

@@ -1,3 +1,8 @@
+/* Background */
+main {
+  background-color: var(--corFundo)
+}
+
 /* Header superior */
 
 #header-top {
