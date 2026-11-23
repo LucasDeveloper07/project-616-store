@@ -6,5 +6,4 @@ export class Produto {
     valorPromo: number = 0;
     quantidade: number = 0;
     destaque: number = 0;
-    keywords: string = "";
 }

@@ -5,36 +5,43 @@
       <h2 class="title-create-account">Criar sua conta</h2>
       <p class="subtitle">Faça parte do universo 616 e tenha acesso ao melhor do MCU!</p>
 
-      <form>
+      <form ngNativeValidate (ngSubmit)="cadastrar()">
         <div class="input-field">
           <i class="bi bi-person"></i>
-          <input type="text" placeholder="Nome completo" required>
+          <input type="text" name="nome" placeholder="Nome completo" required [(ngModel)]="cliente.nome">
         </div>
 
         <div class="input-field">
           <i class="bi bi-envelope"></i>
-          <input type="email" placeholder="E-mail" required>
+          <input type="email" name="email" placeholder="E-mail" required [(ngModel)]="cliente.email">
         </div>
 
         <div class="input-field">
           <i class="bi bi-pencil"></i>
-          <input type="tel" placeholder="Celular (opcional)">
+          <input type="tel" name="telefone" placeholder="Celular (opcional)" [(ngModel)]="cliente.telefone">
+        </div>
+
+        <div class="input-field">
+          <i class="bi bi-geo-alt"></i>
+          <input type="text" name="logradouro" placeholder="Endereço de entrega" required [(ngModel)]="cliente.logradouro">
         </div>
 
         <div class="input-field">
           <i class="bi bi-lock"></i>
-          <input type="password" placeholder="Senha" required>
+          <input type="password" name="senha" placeholder="Senha" required [(ngModel)]="cliente.senha">
         </div>
 
         <div class="input-field">
           <i class="bi bi-lock"></i>
-          <input type="password" placeholder="Confirmar senha" required>
+          <input type="password" name="confirmarSenha" placeholder="Confirmar senha" required [(ngModel)]="confirmarSenha">
         </div>
 
         <div class="terms-check">
           <input type="checkbox" id="terms" required>
           <label for="terms">Li e aceito os <a href="#">Termos de Uso</a> e a <a href="#" class="highlight">Política de Privacidade</a>.</label>
         </div>
+
+        <p *ngIf="mensagem" [style.color]="tipoMensagem == 'erro' ? '#dc3545' : '#198754'" style="font-size: 14px; margin: 0 0 12px;">{{ mensagem }}</p>
 
         <button type="submit" class="btn-submit">Cadastrar</button>
       </form>

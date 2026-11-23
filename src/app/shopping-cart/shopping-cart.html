@@ -1,3 +1,9 @@
+<!-- Mensagem de envio -->
+ <div class="toast-carrinho" [class.erro]="tipoMensagem == 'erro'" *ngIf="mensagem">
+  <i class="bi" [ngClass]="tipoMensagem == 'erro' ? 'bi-exclamation-circle-fill' : 'bi-check-circle-fill'"></i>
+  {{ mensagem }}
+ </div>
+
 <div class="cart-container d-flex justify-content-center">
   <div class="cart-wrapper">
     <div class="cart-header d-flex justify-content-between align-items-start">
@@ -55,7 +61,7 @@
                 <span class="total-preco">{{carrinho.calcTotal() | currency: 'BRL'}}</span>
               </div>
   
-              <button class="btn-finalizar">
+              <button class="btn-finalizar" (click)="finalizar()" [disabled]="enviando">
                 <i class="bi bi-lock-fill"></i> Finalizar compra
               </button>
             </div>

@@ -5,21 +5,23 @@
       <h2>Bem-vindo de volta!</h2>
       <p class="subtitle">Faça seu login para continuar explorando o universo 616.</p>
 
-      <form>
+      <form ngNativeValidate (ngSubmit)="entrar()">
         <div class="input-field">
           <i class="bi bi-envelope"></i>
-          <input type="text" placeholder="E-mail ou usuário" required>
+          <input type="text" name="email" placeholder="E-mail ou usuário" required [(ngModel)]="email">
         </div>
 
         <div class="input-field">
           <i class="bi bi-lock"></i>
-          <input type="password" placeholder="Senha" required>
+          <input type="password" name="senha" placeholder="Senha" required [(ngModel)]="senha">
         </div>
 
         <div class="options-row">
           <label><input type="checkbox"> Lembrar de mim</label>
           <a href="esqueci-senha" class="forgot-pass">Esqueci minha senha</a>
         </div>
+
+        <p *ngIf="mensagem" style="color:#dc3545;font-size:14px;margin:0 0 12px">{{mensagem}}</p>
 
         <button type="submit" class="btn-submit">Entrar</button>
       </form>

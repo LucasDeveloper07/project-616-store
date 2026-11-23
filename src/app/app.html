@@ -27,16 +27,24 @@
             <i class="icones-header bi bi-cart"></i>
           </a>
 
-          <!--Botão de Login e criar conta-->
-          <div class="btn-header">
-            <a href="login" class="btn-login">LOGIN</a>
-            <a href="criar-conta" class="btn-criar-conta">CRIAR CONTA</a>
-          </div>
+          <!--Login / Usuário logado-->
+          @if (auth.logado()) {
+            <div class="btn-header">
+              <span class="btn-login">Olá, {{ auth.primeiroNome() }}</span>
+              <a href="#" (click)="sair(); $event.preventDefault()" class="btn-criar-conta">SAIR</a>
+            </div>
 
-          <!--Icone de usuário-->
-          <a href="login">
             <i class="icones-header bi bi-person"></i>
-          </a>
+          } @else {
+            <div class="btn-header">
+              <a href="login" class="btn-login">LOGIN</a>
+              <a href="criar-conta" class="btn-criar-conta">CRIAR CONTA</a>
+            </div>
+
+            <a href="login">
+              <i class="icones-header bi bi-person"></i>
+            </a>
+          }
         </div>
       </div>
 

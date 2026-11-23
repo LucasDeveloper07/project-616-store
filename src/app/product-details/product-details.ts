@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
+import { ProdutoService } from '../service/produto-service';
 
 @Component({
   imports: [CommonModule],
@@ -11,11 +12,18 @@ import { Produto } from '../model/produto';
 export class ProductDetails {
   obj:Produto = new Produto();
 
-  ngOnInit() {
-    let json = localStorage.getItem("produto");
+  constructor(private service: ProdutoService, private cd: ChangeDetectorRef) {}
 
-    if (json != null) {
-      this.obj = JSON.parse(json);
+  ngOnInit() {
+    let codigoProduto = localStorage.getItem("codigo-produto");
+
+    if (codigoProduto != null) {
+      this.service.viewProduct(Number.parseInt(codigoProduto)).subscribe({
+        next: (produto) => {
+          this.obj = produto;
+          this.cd.detectChanges();
+        }
+      })
     } else {
       location.href="./feed";
     }

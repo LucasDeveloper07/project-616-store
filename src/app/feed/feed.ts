@@ -243,7 +243,7 @@ export class Feed {
   }
 
   verDetalhe(obj: Produto) {
-    localStorage.setItem("produto", JSON.stringify(obj));
+    localStorage.setItem("codigo-produto", JSON.stringify(obj.codigo));
     location.href="./product-details";
   }
 
