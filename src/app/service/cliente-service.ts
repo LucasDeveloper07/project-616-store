@@ -26,4 +26,8 @@ export class ClienteService {
     public alterar(obj: Cliente): Observable<string> {
         return this.http.put(`${API_URL}/cliente`, obj, { responseType: 'text' });
     }
+
+    public redefinirSenha(email: string, senha: string): Observable<string> {
+        return this.http.put(`${API_URL}/cliente/senha`, {email, senha}, {responseType: 'text'});
+    }
 }

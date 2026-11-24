@@ -1,6 +1,6 @@
 /* Background */
 main {
-  background-color: var(--corFundo)
+  background-color: var(--corFundo);
 }
 
 /* Header superior */
@@ -39,6 +39,12 @@ main {
     font-size: 30px;
 }
 
+/* Ações do header (carrinho, botões e usuário) */
+
+.acoes-header {
+    gap: 24px;
+}
+
 /* Header inferior */
 
 #header-bottom {
@@ -62,6 +68,12 @@ main {
 
 /* Botões */
 
+.btn-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .btn-login {
     background-color: var(--vermelho);
     border-radius: 8px;
@@ -69,8 +81,8 @@ main {
     font-family: "M PLUS 1p", sans-serif;
     font-weight: bold;
     color: white;
-    margin-right: 10px;
     text-decoration: none;
+    white-space: nowrap; /* o texto nunca quebra dentro do botão */
 }
 
 .btn-login:hover {
@@ -85,6 +97,7 @@ main {
     font-weight: bold;
     color: white;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .btn-criar-conta:hover {
@@ -143,6 +156,24 @@ i {
         margin-bottom: 20px;
     }
 
+    .acoes-header {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .btn-header {
+        flex: 1;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .btn-login,
+    .btn-criar-conta {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
     .lista-navbar {
         flex-wrap: wrap;
         gap: 6px 12px !important;
@@ -158,5 +189,13 @@ i {
     .messages {
         text-align: left;
         margin-bottom: 10px;
+    }
+}
+
+/* Celulares: esconde a saudação para os botões caberem */
+
+@media (max-width: 576px) {
+    .saudacao {
+        display: none;
     }
 }

@@ -16,6 +16,7 @@ export class Login {
   senha: string = "";
   mensagem: string = "";
   carregando: boolean = false;
+  mostrarSenha: boolean = false;
 
   constructor(
     private service: ClienteService,

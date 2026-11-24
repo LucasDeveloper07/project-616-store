@@ -4,7 +4,7 @@
 
 .card-esqueci-senha {
     width: 500px;
-    background-color: #d7d7d1;;
+    background-color: #d7d7d1;
     border-radius: 8px;
     margin: 60px;
     padding: 60px;
@@ -43,13 +43,63 @@
     margin-bottom: 3px;
 }
 
-#email {
+.campo-form {
     background-color: white;
     border-radius: 8px;
     border: none;
     padding: 7px;
     margin-bottom: 20px;
     outline: none;
+}
+
+/* Campo de senha com botão mostrar/ocultar */
+.campo-senha-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.campo-senha-box .campo-form {
+    width: 100%;
+    margin-bottom: 0;      /* a margem passa para a caixa */
+    padding-right: 45px;   /* o texto não passa por baixo do olho */
+}
+
+.btn-olho {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.btn-olho i {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.btn-olho:hover i {
+    color: var(--preto);
+}
+
+/* esconde o olho nativo do Edge */
+input::-ms-reveal {
+    display: none;
+}
+
+/* Mensagem de aviso */
+.mensagem-form {
+    font-family: "Istok Web", sans-serif;
+    font-size: 14px;
+    color: #198754;
+    margin-bottom: 15px;
+}
+
+.mensagem-form.erro {
+    color: #dc3545;
 }
 
 #btn-enviar {

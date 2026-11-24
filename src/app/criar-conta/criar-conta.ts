@@ -17,6 +17,8 @@ export class CriarConta {
   mensagem: string = "";
   tipoMensagem: string = "erro";
   carregando: boolean = false;
+  mostrarSenha: boolean = false;
+  mostrarConfirmar: boolean = false;
 
   constructor(private service: ClienteService, private cd: ChangeDetectorRef) {}
 

@@ -56,6 +56,41 @@
   outline: none;
 }
 
+/* Botão mostrar/ocultar senha */
+
+.input-field .campo-senha {
+  padding-right: 45px; /* o texto não passa por baixo do olho */
+}
+
+.btn-olho {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* anula o posicionamento à esquerda do ".input-field i" */
+.input-field .btn-olho i {
+  position: static;
+  transform: none;
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.input-field .btn-olho:hover i {
+  color: #444;
+}
+
+/* esconde o olho nativo do Edge */
+input::-ms-reveal {
+  display: none;
+}
+
 .terms-check {
   display: flex;
   align-items: center;

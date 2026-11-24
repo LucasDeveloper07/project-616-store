@@ -5,17 +5,49 @@
         <div class="texto-esqueci-senha">
             <h1 class="titulo-esqueci-senha">Esqueceu sua senha?</h1>
             <p class="paragrafo-esqueci-senha">
-                Digite seu e-mail e enviaremos um link
-                para redefinir sua senha.
+                Digite seu e-mail e escolha uma nova senha.
             </p>
         </div>
     
         <!--Formulário esqueci senha-->
         <div class="esqueci-senha-form">
-            <form action="" class="d-flex flex-column">
+            <form class="d-flex flex-column" ngNativeValidate (ngSubmit)="redefinir()">
+
+                <!--E-mail-->
                 <label for="email" class="label-email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-                <input type="submit" id="btn-enviar" value="Enviar link">
+                <input type="email" name="email" id="email" class="campo-form" placeholder="Digite seu e-mail"
+                       required [(ngModel)]="email">
+
+                <!--Nova senha-->
+                <label for="novaSenha" class="label-email">Nova senha:</label>
+                <div class="campo-senha-box">
+                    <input [type]="mostrarNova ? 'text' : 'password'" name="novaSenha" id="novaSenha" class="campo-form" placeholder="Digite a nova senha"
+                           required [(ngModel)]="novaSenha">
+
+                    <!--Botão mostrar/ocultar senha-->
+                    <button type="button" class="btn-olho" (click)="mostrarNova = !mostrarNova"
+                            [attr.aria-label]="mostrarNova ? 'Ocultar senha' : 'Mostrar senha'">
+                        <i class="bi" [class.bi-eye]="!mostrarNova" [class.bi-eye-slash]="mostrarNova"></i>
+                    </button>
+                </div>
+
+                <!--Confirmar nova senha-->
+                <label for="confirmarSenha" class="label-email">Confirmar nova senha:</label>
+                <div class="campo-senha-box">
+                    <input [type]="mostrarConfirmar ? 'text' : 'password'" name="confirmarSenha" id="confirmarSenha" class="campo-form" placeholder="Repita a nova senha"
+                           required [(ngModel)]="confirmarSenha">
+
+                    <!--Botão mostrar/ocultar confirmação-->
+                    <button type="button" class="btn-olho" (click)="mostrarConfirmar = !mostrarConfirmar"
+                            [attr.aria-label]="mostrarConfirmar ? 'Ocultar senha' : 'Mostrar senha'">
+                        <i class="bi" [class.bi-eye]="!mostrarConfirmar" [class.bi-eye-slash]="mostrarConfirmar"></i>
+                    </button>
+                </div>
+
+                <!--Mensagem de aviso-->
+                <p class="mensagem-form" [class.erro]="tipoMensagem == 'erro'" *ngIf="mensagem">{{mensagem}}</p>
+
+                <button type="submit" id="btn-enviar" [disabled]="carregando">Redefinir senha</button>
             </form>
         </div>
     

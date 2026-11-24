@@ -28,12 +28,24 @@
 
         <div class="input-field">
           <i class="bi bi-lock"></i>
-          <input type="password" name="senha" placeholder="Senha" required [(ngModel)]="cliente.senha">
+          <input [type]="mostrarSenha ? 'text' : 'password'" name="senha" class="campo-senha" placeholder="Senha" required [(ngModel)]="cliente.senha">
+
+          <!--Botão mostrar/ocultar senha-->
+          <button type="button" class="btn-olho" (click)="mostrarSenha = !mostrarSenha"
+                  [attr.aria-label]="mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'">
+            <i class="bi" [class.bi-eye]="!mostrarSenha" [class.bi-eye-slash]="mostrarSenha"></i>
+          </button>
         </div>
 
         <div class="input-field">
           <i class="bi bi-lock"></i>
-          <input type="password" name="confirmarSenha" placeholder="Confirmar senha" required [(ngModel)]="confirmarSenha">
+          <input [type]="mostrarConfirmar ? 'text' : 'password'" name="confirmarSenha" class="campo-senha" placeholder="Confirmar senha" required [(ngModel)]="confirmarSenha">
+
+          <!--Botão mostrar/ocultar confirmação-->
+          <button type="button" class="btn-olho" (click)="mostrarConfirmar = !mostrarConfirmar"
+                  [attr.aria-label]="mostrarConfirmar ? 'Ocultar senha' : 'Mostrar senha'">
+            <i class="bi" [class.bi-eye]="!mostrarConfirmar" [class.bi-eye-slash]="mostrarConfirmar"></i>
+          </button>
         </div>
 
         <div class="terms-check">
