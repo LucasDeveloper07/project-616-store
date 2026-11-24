@@ -26,4 +26,8 @@ export class PedidoService {
     public apagar(codigo: number): Observable<string> {
         return this.http.delete(`${API_URL}/pedido/${codigo}`, { responseType: 'text' });
     }
+
+    public listarPorCliente(codigoCliente: number): Observable<Pedido[]> {
+        return this.http.get<Pedido[]>(`${API_URL}/pedido/cliente/${codigoCliente}`);
+    }
 }

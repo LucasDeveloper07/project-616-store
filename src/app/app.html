@@ -13,11 +13,11 @@
 
         <!--Barra de busca-->
         <div class="input-group">
-          <a href="" class="links-header-top">
+          <a href="#" class="links-header-top" (click)="buscar(campoBusca.value); $event.preventDefault()">
             <i class="input-group-text bi bi-search"></i>
           </a>
 
-          <input type="text" class="form-control">
+          <input #campoBusca type="text" class="form-control" placeholder="Buscar produtos..." [value]="termoBusca" (keydown.enter)="buscar(campoBusca.value)">
         </div>
 
         <div class="d-flex gap-4 d-flex align-items-center">
@@ -31,6 +31,7 @@
           @if (auth.logado()) {
             <div class="btn-header">
               <span class="btn-login">Olá, {{ auth.primeiroNome() }}</span>
+              <a href="meus-pedidos" class="btn-login">MEUS PEDIDOS</a>
               <a href="#" (click)="sair(); $event.preventDefault()" class="btn-criar-conta">SAIR</a>
             </div>
 

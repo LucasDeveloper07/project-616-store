@@ -1,0 +1,52 @@
+<div id="meus-pedidos">
+  <div class="container">
+
+    <!--Título da página-->
+    <h2 class="titulo-pedidos">Meus pedidos</h2>
+
+    <!--Mensagens de carregamento e erro-->
+    <p class="pedidos-aviso" *ngIf="carregando">Carregando pedidos...</p>
+    <p class="pedidos-aviso" *ngIf="erro">Ocorreu um erro, tente novamente mais tarde!</p>
+
+    <!-- Box de sem pedidos -->
+    <div class="pedidos-vazio" *ngIf="!carregando && !erro && pedidos.length == 0">
+      <i class="bi bi-bag"></i>
+      <p>Você ainda não fez nenhum pedido.</p>
+      <a href="feed" class="btn-ver-produtos">Ver produtos</a>
+    </div>
+
+    <!-- Lista de pedidos -->
+    <div class="pedido-card" *ngFor="let p of pedidos">
+
+      <!--Número, data e valor total do pedido-->
+      <div class="pedido-topo d-flex justify-content-between flex-wrap gap-2">
+        <div>
+          <span class="pedido-numero">Pedido nº {{p.codigoPedido}}</span>
+          <span class="pedido-data">{{p.dataPedido | date:'dd/MM/yyyy'}}</span>
+        </div>
+        <span class="pedido-total">{{p.valorTotal | currency:'BRL'}}</span>
+      </div>
+
+      <!--Itens do pedido-->
+      <div class="pedido-item d-flex align-items-center gap-3" *ngFor="let item of p.itens">
+        <img src="{{item.codigoProduto}}.svg" alt="" class="pedido-img">
+
+        <!--Nome do produto, quantidade e valor unitário-->
+        <div class="flex-grow-1">
+          <b>{{nomeProduto(item.codigoProduto)}}</b>
+          <div class="pedido-sub">{{item.quantidade}} x {{item.valor | currency:'BRL'}}</div>
+        </div>
+
+        <!--Subtotal do item-->
+        <span class="pedido-subtotal">{{subtotal(item) | currency:'BRL'}}</span>
+      </div>
+
+      <!--Endereço de entrega e quantidade de itens-->
+      <div class="pedido-rodape">
+        <i class="bi bi-geo-alt"></i> Entrega em: {{p.entrega}}
+        <span class="pedido-qtd">({{totalItens(p)}} itens)</span>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -20,14 +20,17 @@ export class Carrinho {
         }
     }
 
-    public addItem(obj: Produto) {
+    public addItem(obj: Produto, quantidade: number = 1) {
         let produtoExists = this.itens.find(item => item.produto.codigo === obj.codigo);
 
         if (produtoExists) {
-            produtoExists.qtd++;
+            produtoExists.qtd += quantidade;
             produtoExists.valorTotal = this.calcItem(produtoExists);
         } else {
-            this.itens.push(new ItemCarrinho(obj));
+            const novo = new ItemCarrinho(obj);
+            novo.qtd = quantidade;
+            novo.valorTotal = this.calcItem(novo);
+            this.itens.push(novo);
         }
     }
 

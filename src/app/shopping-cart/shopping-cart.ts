@@ -98,6 +98,8 @@ export class ShoppingCart {
         this.mostrarMensagem(
           numero ? `Pedido nº ${numero} realizado com sucesso!` : "Pedido realizado com sucesso!", "sucesso"
         );
+        
+        setTimeout(() => location.href = "./meus-pedidos", 1500);
       },
       error: () => {
         this.enviando = false;

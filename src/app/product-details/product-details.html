@@ -1,3 +1,15 @@
+<!--Mensagem de aviso-->
+<div class="toast-carrinho" [class.erro]="tipoMensagem == 'erro'" *ngIf="mensagem">
+    <i class="bi" [ngClass]="tipoMensagem == 'erro' ? 'bi-exclamation-circle-fill' : 'bi-check-circle-fill'"></i>
+    {{mensagem}}
+</div>
+
+<!--Produto não encontrado-->
+<div *ngIf="naoEncontrado" style="text-align:center;padding:80px 20px">
+    <h2>Produto não encontrado</h2>
+    <a href="feed">Voltar para a loja</a>
+</div>
+
 <div id="detalhes-produto">
     <div id="card-produto" class="d-flex gap-3">
     
@@ -51,20 +63,24 @@
                 ou até 3x de {{ calcularParcela(obj.valorPromo, 3) | currency:'BRL' }} sem juros
             </p>
 
+            <!--Estoque-->
+            <p class="parcela-produto" *ngIf="obj.quantidade > 0">{{obj.quantidade}} unidades em estoque</p>
+            <p class="parcela-produto" *ngIf="obj.quantidade == 0"><b>Produto esgotado</b></p>
+
             <!--Seletor de quantidade do produto-->
             <div class="seletor-quantidade d-flex align-items-center gap-3">
-                <button type="button" class="qtd-btn" id="qtd-min">-</button>
-                <span id="qtd-valor">1</span>
-                <button type="button" class="qtd-btn" id="qtd-max">+</button>
+                <button type="button" class="qtd-btn" id="qtd-min" (click)="diminuir()" [disabled]="obj.quantidade == 0">-</button>
+                <span id="qtd-valor">{{qtd}}</span>
+                <button type="button" class="qtd-btn" id="qtd-max" (click)="aumentar()" [disabled]="obj.quantidade == 0">+</button>
             </div>
 
             <!--Botão de adicionar ao carrinho-->
-            <button type="button" class="btn-add-carrinho w-100">
+            <button type="button" class="btn-add-carrinho w-100" (click)="adicionarCarrinho()" [disabled]="obj.quantidade == 0">
                 <i class="bi bi-cart"></i> ADICIONAR AO CARRINHO
             </button>
 
             <!--Botão de comprar agora-->
-            <button type="button" class="btn-comprar-agora w-100">
+            <button type="button" class="btn-comprar-agora w-100" (click)="comprarAgora()" [disabled]="obj.quantidade == 0">
                 COMPRAR AGORA
             </button>
 
